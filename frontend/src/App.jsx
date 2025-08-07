@@ -22,7 +22,6 @@ import InstructorLayout from './Layouts/Instructorlayout.jsx';
 import Editcourse from './Instructor/pages/Editcourse.jsx';
 import Unauthorized from './Layouts/Unauthorized.jsx';
 import ProtectedRoute from './components/Protectedroute.jsx';
-import LiveStream from './Pages/LiveStreamViewer.jsx';
 import LiveStreamSender from './Pages/Livestreamsender.jsx';
 import LiveStreamViewer from './Pages/LiveStreamViewer.jsx';
 import AvailableStreams from './Pages/Availablestreams.jsx';
