@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app',
     credentials: true,
 }));
 
