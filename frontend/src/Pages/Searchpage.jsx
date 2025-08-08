@@ -11,7 +11,7 @@ const Searchpage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://online-learning-portal-lms.onrender.com//api/courses/fetch");
+        const res = await axios.get("https://online-learning-portal-lms.onrender.com/api/courses/fetch");
         setCourses(res.data);
         setFilteredCourses(res.data);
       } catch (err) {

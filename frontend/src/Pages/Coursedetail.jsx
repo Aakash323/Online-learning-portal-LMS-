@@ -44,7 +44,7 @@ const CourseDetail = () => {
   const handleEnroll = async () => {
     try {
       const response = await axios.post(
-        `https://online-learning-portal-lms.onrender.com//api/enrollment/en/${id}`,
+        `https://online-learning-portal-lms.onrender.com/api/enrollment/en/${id}`,
         {},
         {
           headers: {

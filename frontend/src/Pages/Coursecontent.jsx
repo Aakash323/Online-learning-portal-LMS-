@@ -17,7 +17,7 @@ const CourseContent = () => {
       }
 
       try {
-        const res = await axios.get(`https://online-learning-portal-lms.onrender.com//api/courses/fetch/${id}`, {
+        const res = await axios.get(`https://online-learning-portal-lms.onrender.com/api/courses/fetch/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

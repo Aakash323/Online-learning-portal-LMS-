@@ -8,7 +8,7 @@ const Visualizeddata = () => {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        const res = await axios.get("https://online-learning-portal-lms.onrender.com//api/user/view-data", {
+        const res = await axios.get("https://online-learning-portal-lms.onrender.com/api/user/view-data", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setDashboardData(res.data);

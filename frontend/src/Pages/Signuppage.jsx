@@ -47,7 +47,7 @@ const Signuppage = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const res = await axios.post("https://online-learning-portal-lms.onrender.com//api/user/register", data);
+        const res = await axios.post("https://online-learning-portal-lms.onrender.com/api/user/register", data);
         alert("Registration successful! Please log in.");
         navigate("/login");
       } catch (error) {

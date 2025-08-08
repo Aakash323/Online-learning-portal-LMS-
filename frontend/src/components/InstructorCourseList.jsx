@@ -9,7 +9,7 @@ const InstructorCourseList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("https://online-learning-portal-lms.onrender.com//api/courses/instructorCourse", {
+        const res = await axios.get("https://online-learning-portal-lms.onrender.com/api/courses/instructorCourse", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

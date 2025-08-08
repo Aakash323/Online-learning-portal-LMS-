@@ -13,7 +13,7 @@ const Myenrolls = () => {
 
       try {
         const response = await axios.get(
-          "https://online-learning-portal-lms.onrender.com//api/enrollment/geten", 
+          "https://online-learning-portal-lms.onrender.com/api/enrollment/geten", 
           {
             headers: {
               Authorization: `Bearer ${token}`,

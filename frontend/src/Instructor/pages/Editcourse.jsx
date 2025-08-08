@@ -22,7 +22,7 @@ const Editcourse = () => {
     const fetchCourses = async () => {
       try {
         const res = await axios.get(
-          "https://online-learning-portal-lms.onrender.com//api/courses/instructorCourse",
+          "https://online-learning-portal-lms.onrender.com/api/courses/instructorCourse",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -61,7 +61,7 @@ const Editcourse = () => {
 
     try {
       await axios.delete(
-        `https://online-learning-portal-lms.onrender.com//api/courses/instructor/del/${courseId}`,
+        `https://online-learning-portal-lms.onrender.com/api/courses/instructor/del/${courseId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -124,7 +124,7 @@ const Editcourse = () => {
       formData.append("removePdfs", JSON.stringify(removePdfs));
 
       const res = await axios.post(
-        `https://online-learning-portal-lms.onrender.com//api/courses/instructor/update/${editingCourseId}`,
+        `https://online-learning-portal-lms.onrender.com/api/courses/instructor/update/${editingCourseId}`,
         formData,
         {
           headers: {
