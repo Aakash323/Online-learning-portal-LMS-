@@ -12,7 +12,7 @@ export const CourseProvider = ({ children }) => {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/courses/fetch');
+      const response = await axios.get('https://online-learning-portal-lms.onrender.com//api/courses/fetch');
       const data = await response.data;
       setCourses(data);
     } catch (error) {
