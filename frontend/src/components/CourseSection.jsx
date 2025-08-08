@@ -22,7 +22,7 @@ const CourseSection = () => {
               key={course.id}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
             >
-              <img src={`http://localhost:3000${course.image}`} alt={course.title} className="w-full h-40 object-cover" />
+              <img src={`https://online-learning-portal-lms.onrender.com/${course.image}`} alt={course.title} className="w-full h-40 object-cover" />
               <div className="p-4" >
                 <h3 className="text-lg font-semibold">{course.title}</h3>
                 <p className="text-gray-600 text-sm mt-2">{course.description}</p>

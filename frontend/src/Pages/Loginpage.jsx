@@ -12,7 +12,7 @@ const Loginpage = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post("http://localhost:3000/api/user/login", { email, password });
+    const response = await axios.post("https://online-learning-portal-lms.onrender.com//api/user/login", { email, password });
     console.log("Login successful:", response.data);
     alert("Login successful!");
     localStorage.setItem("token", response.data.token);

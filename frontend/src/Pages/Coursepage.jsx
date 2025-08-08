@@ -29,7 +29,7 @@ const Coursepage = () => {
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
               >
                 <img
-                  src={`http://localhost:3000${course.image}`}
+                  src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
                   alt={course.title}
                   className="w-full h-40 object-cover"
                 />

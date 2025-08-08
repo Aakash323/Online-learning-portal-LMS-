@@ -22,7 +22,7 @@ const Editcourse = () => {
     const fetchCourses = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3000/api/courses/instructorCourse",
+          "https://online-learning-portal-lms.onrender.com//api/courses/instructorCourse",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -61,7 +61,7 @@ const Editcourse = () => {
 
     try {
       await axios.delete(
-        `http://localhost:3000/api/courses/instructor/del/${courseId}`,
+        `https://online-learning-portal-lms.onrender.com//api/courses/instructor/del/${courseId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -124,7 +124,7 @@ const Editcourse = () => {
       formData.append("removePdfs", JSON.stringify(removePdfs));
 
       const res = await axios.post(
-        `http://localhost:3000/api/courses/instructor/update/${editingCourseId}`,
+        `https://online-learning-portal-lms.onrender.com//api/courses/instructor/update/${editingCourseId}`,
         formData,
         {
           headers: {
@@ -205,7 +205,7 @@ const Editcourse = () => {
                           <td className="px-2 py-2">
                             {course.image && (
                               <img
-                                src={`http://localhost:3000${course.image}`}
+                                src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
                                 alt={course.title}
                                 className="w-24 h-16 object-cover rounded"
                               />
@@ -219,7 +219,7 @@ const Editcourse = () => {
                           </td>
                           <td className="px-4 py-2">
                             {course.videos?.map((video, idx) => {
-                              const videoUrl = `http://localhost:3000${
+                              const videoUrl = `https://online-learning-portal-lms.onrender.com/${
                                 video.url || video.path || video
                               }`;
                               const videoName =
@@ -240,7 +240,7 @@ const Editcourse = () => {
                           </td>
                           <td className="px-4 py-2 space-y-2">
                             {course.pdfs?.map((pdf, idx) => {
-                              const pdfUrl = `http://localhost:3000${
+                              const pdfUrl = `https://online-learning-portal-lms.onrender.com/${
                                 pdf.url || pdf.path || pdf
                               }`;
                               const pdfName = pdf.filename || `PDF ${idx + 1}`;

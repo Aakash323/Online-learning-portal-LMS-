@@ -17,7 +17,7 @@ const CourseContent = () => {
       }
 
       try {
-        const res = await axios.get(`http://localhost:3000/api/courses/fetch/${id}`, {
+        const res = await axios.get(`https://online-learning-portal-lms.onrender.com//api/courses/fetch/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -61,7 +61,7 @@ const CourseContent = () => {
     <div className="min-h-screen bg-gray-50 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <img
-          src={`http://localhost:3000${course.image}`}
+          src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
           alt={course.title}
           className="w-full h-64 object-cover"
         />
@@ -83,7 +83,7 @@ const CourseContent = () => {
                     <video
                       controls
                       className="w-full rounded shadow"
-                      src={`http://localhost:3000${video.url}`}
+                      src={`https://online-learning-portal-lms.onrender.com/${video.url}`}
                     >
                       Your browser does not support the video tag.
                     </video>
@@ -105,7 +105,7 @@ const CourseContent = () => {
                   <div key={index} className="flex items-center justify-between p-3 bg-gray-100 rounded">
                     <span className="text-gray-700">{pdf.filename}</span>
                     <a
-                      href={`http://localhost:3000${pdf.url}`}
+                      href={`https://online-learning-portal-lms.onrender.com/${pdf.url}`}
                       download
                       className="bg-indigo-600 text-white px-3 py-1 rounded hover:bg-indigo-700 text-sm"
                     >

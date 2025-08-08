@@ -73,7 +73,7 @@ const CreateCourse = () => {
     formData.videos.forEach((file) => submission.append('files', file));
 
     try {
-      const res = await axios.post('http://localhost:3000/api/courses/addCourse', submission, {
+      const res = await axios.post('https://online-learning-portal-lms.onrender.com//api/courses/addCourse', submission, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

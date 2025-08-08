@@ -20,7 +20,7 @@ const Enrollment = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/enrollment/en/${selectedCourse}`,
+        `https://online-learning-portal-lms.onrender.com//api/enrollment/en/${selectedCourse}`,
         {},
         {
           headers: {

@@ -13,7 +13,7 @@ const Myenrolls = () => {
 
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/enrollment/geten", 
+          "https://online-learning-portal-lms.onrender.com//api/enrollment/geten", 
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ const Myenrolls = () => {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
             >
               <img
-                src={`http://localhost:3000${course.image}`}
+                src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
                 alt={course.title}
                 className="w-full h-48 object-cover"
               />

@@ -6,7 +6,7 @@ const CourseCard = ({ course }) => {
     <div className="bg-white rounded-lg shadow hover:shadow-md transition overflow-hidden">
       {course.image && (
         <img
-          src={`http://localhost:3000${course.image}`}
+          src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
           alt={course.title}
           className="w-full h-40 object-cover"
         />
