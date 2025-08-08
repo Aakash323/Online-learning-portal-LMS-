@@ -92,10 +92,10 @@ const Editcourse = () => {
       formData.append("existingPdfs", JSON.stringify(existingPdfs));
 
       // Append new videos
-      newVideos.forEach((file) => formData.append("videos", file));
+      newVideos.forEach((file) => formData.append("files", file));
 
       // Append new PDFs
-      newPdfs.forEach((file) => formData.append("pdfs", file));
+      newPdfs.forEach((file) => formData.append("files", file));
 
       // Calculate which original files to remove
       const originalCourse = courses.find((c) => c._id === editingCourseId);
