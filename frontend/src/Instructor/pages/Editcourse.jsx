@@ -16,6 +16,8 @@ const Editcourse = () => {
   const [existingVideos, setExistingVideos] = useState([]);
   const [existingPdfs, setExistingPdfs] = useState([]);
 
+  const [isUploading, setIsUploading] = useState(false); // <-- Loading state
+
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -54,6 +56,7 @@ const Editcourse = () => {
     setNewPdfs([]);
     setExistingVideos([]);
     setExistingPdfs([]);
+    setIsUploading(false);
   };
 
   const handleDelete = async (courseId) => {
@@ -77,6 +80,7 @@ const Editcourse = () => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    setIsUploading(true); // Start loading
 
     try {
       const formData = new FormData();
@@ -145,6 +149,7 @@ const Editcourse = () => {
     } catch (error) {
       console.error("Failed to update course", error);
       alert("Failed to update course. Please try again.");
+      setIsUploading(false);
     }
   };
 
@@ -332,7 +337,7 @@ const Editcourse = () => {
                               required
                               min={0}
                             />
-                            <br></br>
+                            <br />
                             {/* Thumbnail Image */}
                             <div className="mb-3">
                               <label className="block font-medium text-gray-700 mb-1">
@@ -439,17 +444,34 @@ const Editcourse = () => {
                               )}
                             </div>
 
+                            {/* Uploading message */}
+                            {isUploading && (
+                              <div className="col-span-2 text-center text-indigo-600 font-semibold">
+                                Uploading, please wait...
+                              </div>
+                            )}
+
                             <div className="col-span-2 flex justify-end space-x-3">
                               <button
                                 type="submit"
-                                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                                disabled={isUploading}
+                                className={`px-4 py-2 rounded text-white ${
+                                  isUploading
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-green-600 hover:bg-green-700"
+                                }`}
                               >
                                 Save
                               </button>
                               <button
                                 onClick={cancelEditing}
                                 type="button"
-                                className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500"
+                                disabled={isUploading}
+                                className={`px-4 py-2 rounded text-white ${
+                                  isUploading
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-gray-400 hover:bg-gray-500"
+                                }`}
                               >
                                 Cancel
                               </button>
@@ -467,4 +489,5 @@ const Editcourse = () => {
     </>
   );
 };
+
 export default Editcourse;
