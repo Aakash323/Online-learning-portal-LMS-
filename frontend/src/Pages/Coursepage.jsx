@@ -4,11 +4,13 @@ import { useCourses } from "../context/coursecontext.jsx";
 
 const Coursepage = () => {
   const { courses, loading } = useCourses();
+  console.log(courses);
+
   if (loading) {
     return <div className="text-center py-10">Loading courses...</div>;
   }
 
-  if (courses.length === 0) {
+  if (!courses || courses.length === 0) {
     return (
       <div className="text-center py-10">
         No courses available at the moment.
@@ -23,16 +25,19 @@ const Coursepage = () => {
 
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {courses.map((course) => (
-            <Link to={`/coursesinfo/${course._id}`}>
-              <div
-                key={course._id}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
-              >
-                <img
-                  src={`https://online-learning-portal-lms.vercel.app/${course.image}`}
-                  alt={course.title}
-                  className="w-full h-40 object-cover"
-                />
+            <Link
+              key={course._id}  
+              to={`/coursesinfo/${course._id}`}
+              className="cursor-pointer"
+            >
+              <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+                {course.image && (
+                  <img
+                    src={`https://online-learning-portal-lms.onrender.com${course.image}`}
+                    alt={course.title}
+                    className="w-full h-40 object-cover"
+                  />
+                )}
                 <div className="p-4">
                   <h2 className="text-lg font-semibold">{course.title}</h2>
                   <p className="text-gray-600 text-sm mt-2 line-clamp-2">

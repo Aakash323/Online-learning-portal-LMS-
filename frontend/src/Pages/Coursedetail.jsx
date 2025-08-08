@@ -16,9 +16,13 @@ const CourseDetail = () => {
         const courseRes = await axios.get(`https://online-learning-portal-lms.onrender.com/api/courses/fetch/${id}`);
         setCourse(courseRes.data);
 
+        // Log course image safely after course is fetched
+        console.log(courseRes.data.image);
+
         // 2. Fetch user's enrollments
         const token = localStorage.getItem("token");
         if (!token) {
+          setLoading(false);
           return;
         }
 
@@ -37,8 +41,6 @@ const CourseDetail = () => {
         setLoading(false);
       }
     };
-    console.log(course.image);
-    
 
     fetchData();
   }, [id]);
@@ -55,7 +57,7 @@ const CourseDetail = () => {
         }
       );
       alert(response.data.message || "Successfully enrolled!");
-      setIsEnrolled(true); 
+      setIsEnrolled(true);
       navigate(`/myenrolls`);
     } catch (err) {
       console.error("Enrollment failed:", err);
