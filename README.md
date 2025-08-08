@@ -36,11 +36,11 @@ A full-featured LMS web application where **Instructors** can upload and manage 
 ### Live Demo
 ##### Frontend
  ```bash 
- https://online-learning-portal-9grxii3bp-aakash-poudels-projects.vercel.app/
+https://online-learning-portal-lms.vercel.app/
  ```
  ##### Backend
  ```bash 
-https://online-learning-portal-lms.onrender.com/
+https://online-learning-portal-lms.onrender.com
  ```
  
 ## For local setup
