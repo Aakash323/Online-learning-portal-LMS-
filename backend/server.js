@@ -19,10 +19,30 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app',
+    'https://online-learning-portal-lms.vercel.app'
+];
+
 app.use(cors({
-    origin: 'online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app',
+    origin: ['online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app',
+        'http://localhost:5173',
+        'https://online-learning-portal-lms.vercel.app'
+    ],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed from this origin: " + origin));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-}));
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 
 connectDB()
 
