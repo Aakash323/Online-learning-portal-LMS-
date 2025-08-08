@@ -1,5 +1,6 @@
 import React from "react";
 import { useCourses } from "../context/coursecontext.jsx";
+import { Link } from "react-router-dom";
 
 const CourseSection = () => {
   const { courses, loading } = useCourses();
@@ -50,9 +51,9 @@ const CourseSection = () => {
         </div>
 
         <div className="mt-6 text-right">
-          <a href="/courses" className="text-indigo-600 hover:underline font-medium">
+          <Link to ="/courses" className="text-indigo-600 hover:underline font-medium">
             View All Courses →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

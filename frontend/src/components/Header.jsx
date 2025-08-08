@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -21,12 +22,12 @@ const Header = () => {
         <p className="text-lg text-gray-900 mt-4">
           Explore courses, enrollments, and learn all in one place.
         </p>
-        <a
-          href="/courses"
+        <Link
+          to="/courses"
           className="mt-6 inline-block px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow hover:bg-indigo-700 transition"
         >
           Browse Courses
-        </a>
+        </Link>
       </div>
     </header>
   )
