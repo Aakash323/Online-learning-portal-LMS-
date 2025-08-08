@@ -61,7 +61,7 @@ const CourseDetail = () => {
       navigate(`/myenrolls`);
     } catch (err) {
       console.error("Enrollment failed:", err);
-      alert("Failed to enroll.");
+      alert("Failed to enroll.Make sure you are logged in and try again.");
     }
   };
 
