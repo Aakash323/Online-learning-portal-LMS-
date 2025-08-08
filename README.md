@@ -36,7 +36,7 @@ A full-featured LMS web application where **Instructors** can upload and manage 
 ### Live Demo
 ##### Frontend
  ```bash 
- online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app
+ https://online-learning-portal-9grxii3bp-aakash-poudels-projects.vercel.app/
  ```
  ##### Backend
  ```bash 
