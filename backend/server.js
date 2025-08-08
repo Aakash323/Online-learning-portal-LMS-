@@ -22,7 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = [
     'http://localhost:5173',
     'https://online-learning-portal-4fonmkx37-aakash-poudels-projects.vercel.app',
-    'https://online-learning-portal-lms.vercel.app'
+    'https://online-learning-portal-lms.vercel.app/',
+    
 ];
 
 app.use(cors({
@@ -34,10 +35,14 @@ app.use(cors({
       callback(new Error("CORS not allowed from this origin: " + origin));
     }
   },
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], 
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
+// Explicitly handle preflight OPTIONS requests
+app.options('*', cors());
+
 
 
 
