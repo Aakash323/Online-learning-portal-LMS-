@@ -51,7 +51,7 @@ const InstructorCourseList = () => {
         >
           {course.image && (
             <img
-              src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
+              src={`https://online-learning-portal-lms.onrender.com${course.image}`}
               alt={course.title}
               className="w-full h-40 object-cover rounded mb-3"
             />

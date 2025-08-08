@@ -205,7 +205,7 @@ const Editcourse = () => {
                           <td className="px-2 py-2">
                             {course.image && (
                               <img
-                                src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
+                                src={`https://online-learning-portal-lms.onrender.com${course.image}`}
                                 alt={course.title}
                                 className="w-24 h-16 object-cover rounded"
                               />
@@ -219,7 +219,7 @@ const Editcourse = () => {
                           </td>
                           <td className="px-4 py-2">
                             {course.videos?.map((video, idx) => {
-                              const videoUrl = `https://online-learning-portal-lms.onrender.com/${
+                              const videoUrl = `https://online-learning-portal-lms.onrender.com${
                                 video.url || video.path || video
                               }`;
                               const videoName =
@@ -240,7 +240,7 @@ const Editcourse = () => {
                           </td>
                           <td className="px-4 py-2 space-y-2">
                             {course.pdfs?.map((pdf, idx) => {
-                              const pdfUrl = `https://online-learning-portal-lms.onrender.com/${
+                              const pdfUrl = `https://online-learning-portal-lms.onrender.com${
                                 pdf.url || pdf.path || pdf
                               }`;
                               const pdfName = pdf.filename || `PDF ${idx + 1}`;
