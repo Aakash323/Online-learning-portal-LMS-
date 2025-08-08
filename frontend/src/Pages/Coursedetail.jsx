@@ -13,7 +13,7 @@ const CourseDetail = () => {
     const fetchData = async () => {
       try {
         // 1. Fetch course details
-        const courseRes = await axios.get(`https://online-learning-portal-lms.onrender.com//api/courses/fetch/${id}`);
+        const courseRes = await axios.get(`https://online-learning-portal-lms.onrender.com/api/courses/fetch/${id}`);
         setCourse(courseRes.data);
 
         // 2. Fetch user's enrollments
@@ -22,7 +22,7 @@ const CourseDetail = () => {
           return;
         }
 
-        const enrollmentsRes = await axios.get(`https://online-learning-portal-lms.onrender.com//api/enrollment/geten`, {
+        const enrollmentsRes = await axios.get(`https://online-learning-portal-lms.onrender.com/api/enrollment/geten`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -74,7 +74,7 @@ const CourseDetail = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         {course.image && (
           <img
-            src={`https://online-learning-portal-lms.onrender.com/${course.image}`}
+            src={`https://online-learning-portal-lms.onrender.com/uploads/images${course.image}`}
             alt={course.title}
             className="w-full h-64 object-cover"
           />
