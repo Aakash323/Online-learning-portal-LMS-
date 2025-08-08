@@ -37,6 +37,8 @@ const CourseDetail = () => {
         setLoading(false);
       }
     };
+    console.log(course.image);
+    
 
     fetchData();
   }, [id]);
@@ -74,7 +76,7 @@ const CourseDetail = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
         {course.image && (
           <img
-            src={`https://online-learning-portal-lms.onrender.com/uploads/images${course.image}`}
+            src={`https://online-learning-portal-lms.onrender.com${course.image}`}
             alt={course.title}
             className="w-full h-64 object-cover"
           />
