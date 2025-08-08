@@ -158,12 +158,6 @@ export default function Navbar() {
           >
             Courses
           </Link>
-          <Link
-            to="/assignments"
-            className="block px-4 py-2 hover:bg-gray-100 transition"
-          >
-            Assignments
-          </Link>
           {user && (
             <>
               <Link
